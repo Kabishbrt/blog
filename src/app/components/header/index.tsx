@@ -96,7 +96,7 @@ export const Header = () => {
                 <ul className="block lg:flex lg:space-x-12 lg:-ml-10 m-0 p-4">
                   {menuItems.map((item) => (
                     <li key={item.id} className="group relative">
-                      <Link href={item.path === '/' ? '/home' : item.path}>
+                      <Link href={item.path}>
                         <span className={`flex py-2 text-base text-dark group-hover:opacity-70 dark:text-white lg:mr-0 lg:inline-flex lg:px-0 cursor-pointer`}>
                           {item.label}
                           {pathName === item.path && <span className={`absolute bottom-0 left-0 lg:w-full w-1/4 h-0.5 ${theme==="dark"? ("bg-white"):("bg-black")}`}></span>}
