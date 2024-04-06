@@ -22,7 +22,7 @@ export const Header = () => {
   const pathName = usePathname();
 
 
-
+  
   useEffect(() => {
     function handleStickyNavbar() {
       if (window.scrollY >=15) setSticky(true);

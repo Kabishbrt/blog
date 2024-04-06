@@ -1,9 +1,18 @@
 'use client'
 import React from 'react'
-import { ProgressBar } from 'react-loader-spinner'
+import { TailSpin } from 'react-loader-spinner'
 
 export const Spinner = () => {
   return (
-    <ProgressBar height={'120'} width={'120'} borderColor="#000" barColor="#fff" ariaLabel = "Common Loader">Spinner</ProgressBar>
+    <TailSpin
+      visible={true}
+      height="80"
+      width="80"
+      color="grey"
+      ariaLabel="tail-spin-loading"
+      radius="1"
+      wrapperStyle={{}}
+      wrapperClass=""
+      />
   )
 }
