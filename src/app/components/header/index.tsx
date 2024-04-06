@@ -19,7 +19,10 @@ export const Header = () => {
   //   const {setSearchQuery, setSearchResults} = useContext(GlobalContext);
   const [navbarOpen, setNavbarOpen] = useState<boolean>(false);
   const router = useRouter();
-  const pathName = usePathname();
+  let pathName = usePathname();
+  if(pathName ===""){
+    pathName = "/";
+  }
 
 
   
