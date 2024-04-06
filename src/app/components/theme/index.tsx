@@ -16,7 +16,7 @@ export default function ThemeToggler() {
   if (!mounted) return null;
 
   return (
-    <button onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}>
+    <button className='border-none focus:outline-none' onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}>
         {
             theme ==='dark' ? <BsSunFill size={30} color="white"/> : <MdDarkMode size={30} />
         }

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import React, { useEffect, useContext } from "react";
 import { useState } from "react";
+import { useTheme } from "next-themes";
 import { menuItems } from "../../../utils/index";
 import { MenuItem } from "../../../utils/types";
 import { signIn, signOut, useSession } from "next-auth/react";
@@ -13,6 +14,7 @@ import ThemeToggler from "../theme";
 
 export const Header = () => {
   const [Sticky, setSticky] = useState<boolean>(false);
+  const { theme } = useTheme();
   //   const { data: session } = useSession();
   //   const {setSearchQuery, setSearchResults} = useContext(GlobalContext);
   const [navbarOpen, setNavbarOpen] = useState<boolean>(false);
@@ -40,7 +42,7 @@ export const Header = () => {
         className={`top-0 left-0 z-40 flex w-full items-center bg-transparent
         ${
           Sticky
-            ? "!fixed !z-[9999] !bg-white !bg-opacity-80 shadow-sticky backdrop:blur-lg !transition dark:!bg-primary dark:!bg-opacity-20"
+            ? "!fixed !z-[9999] !bg-white !bg-opacity-80 shadow-sticky backdrop:blur-md !transition dark:!bg-primary dark:!bg-opacity-20"
             : "absolute"
         }
         `}
@@ -82,7 +84,7 @@ export const Header = () => {
               </button>
               <nav
                 id="navbarCollapse"
-                className={`absolute right-0 z-30 w-[250px] rounded border-[.5px] bg-white border-body-color/50 py-4 duration-300 dark:border-body-color/20 dark:bg-dark lg:visible lg:static lg:w-auto lg:border-none lg:!bg-transparent lg:p-0 lg:opacity-100
+                className={`absolute right-0 z-30 w-[250px] mr-4 rounded border-[.5px] bg-white border-body-color/50 py-4 duration-300 dark:border-body-color/20 dark:bg-dark lg:visible lg:static lg:w-auto lg:border-none lg:!bg-transparent lg:p-0 lg:opacity-100
 
                 ${
                   navbarOpen
@@ -97,8 +99,8 @@ export const Header = () => {
                       <Link href={item.path}>
                         <span className={`flex py-2 text-base text-dark group-hover:opacity-70 dark:text-white lg:mr-0 lg:inline-flex lg:px-0 cursor-pointer`}>
                           {item.label}
-                          {pathName === item.path && <span className="absolute bottom-0 left-0 lg:w-full w-1/4 h-0.5 bg-black"></span>}
-                        </span>
+                          {pathName === item.path && <span className={`absolute bottom-0 left-0 lg:w-full w-1/4 h-0.5 ${theme==="dark"? ("bg-white"):("bg-black")}`}></span>}
+                        </span> 
                       </Link>
                     </li>
                   ))}
