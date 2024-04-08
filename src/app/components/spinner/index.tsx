@@ -1,18 +1,22 @@
 'use client'
 import React from 'react'
-import { TailSpin } from 'react-loader-spinner'
+import { Hourglass } from 'react-loader-spinner'
 
 export const Spinner = () => {
   return (
-    <TailSpin
-      visible={true}
-      height="80"
-      width="80"
-      color="grey"
-      ariaLabel="tail-spin-loading"
-      radius="1"
-      wrapperStyle={{}}
-      wrapperClass=""
-      />
-  )
+    <>
+    <div className="flex h-screen justify-center items-center">
+
+      <Hourglass
+        visible={true}
+        height="80"
+        width="80"
+        ariaLabel="hourglass-loading"
+        wrapperStyle={{}}
+        wrapperClass=""
+        colors={['#3a5be0','#4a6cf7']}
+        />
+    </div>
+    </>
+    )
 }
