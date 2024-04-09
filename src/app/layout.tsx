@@ -5,6 +5,8 @@ import { NextThemeProvider } from "@/providers/theme-provider";
 import { NextAuthProvider } from "@/providers/next-auth-provider";
 import GlobalState from "@/context";
 import { Header } from "./components/header";
+import { App } from "./App";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,8 +26,7 @@ export default function RootLayout({
         <NextThemeProvider>
           <NextAuthProvider>
             <GlobalState>
-              <Header/>
-              {children}
+            <App>{children}</App>
             </GlobalState>
           </NextAuthProvider>
         </NextThemeProvider>

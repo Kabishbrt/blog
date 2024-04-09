@@ -1,9 +1,22 @@
 'use client'
 import React from 'react'
-import { ProgressBar } from 'react-loader-spinner'
+import { Hourglass } from 'react-loader-spinner'
 
 export const Spinner = () => {
   return (
-    <ProgressBar height={'120'} width={'120'} borderColor="#000" barColor="#fff" ariaLabel = "Common Loader">Spinner</ProgressBar>
-  )
+    <>
+    <div className="flex h-screen justify-center items-center">
+
+      <Hourglass
+        visible={true}
+        height="80"
+        width="80"
+        ariaLabel="hourglass-loading"
+        wrapperStyle={{}}
+        wrapperClass=""
+        colors={['#3a5be0','#4a6cf7']}
+        />
+    </div>
+    </>
+    )
 }
