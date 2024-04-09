@@ -24,6 +24,9 @@ export const Header = () => {
     pathName = "/";
   }
 
+  const {data: session} = useSession();
+  console.log(session,'session')
+
 
   
   useEffect(() => {
@@ -110,9 +113,9 @@ export const Header = () => {
                 </ul>
               </nav>
             </div>
-            <div className="flex gap-4 items-center justify-end pr-16 lg:pr-0">
-              <Button text="Create" onClick={() => {}}></Button>
-              <Button text="Log" onClick={() => {}}></Button>
+            <div className="flex gap-2 lg:gap-4 items-center justify-end mr-16 lg:pr-0">
+              <Button text="Create" onClick={() => {}}></Button> 
+              <Button text="Log In" onClick={() => signIn()}></Button>
 
               {/* {session !== null ? ( 
                 <Button onClick={() => router.push("/create")} text="Create" />

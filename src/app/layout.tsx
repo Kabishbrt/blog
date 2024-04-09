@@ -7,6 +7,7 @@ import GlobalState from "@/context";
 import { Header } from "./components/header";
 import { App } from "./App";
 
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
