@@ -25,7 +25,6 @@ export const Header = () => {
   }
 
   const {data: session} = useSession();
-  console.log(session,'session')
 
 
   
@@ -54,8 +53,8 @@ export const Header = () => {
         `}
       >
         <div className="container">
-          <div className="relative -mx-4 flex items-center justify-between">
-            <div className="w-60 max-w-full px-4 xl:mr-12">
+          <div className="relative flex items-center justify-between">
+            <div className="w-auto max-w-full px-4 xl:mr-12">
               <Link
                 href={"/"}
                 className={`text-[25px] font-extrabold cursor-pointer block w-full dark:text-white
@@ -90,7 +89,7 @@ export const Header = () => {
               </button>
               <nav
                 id="navbarCollapse"
-                className={`absolute right-0 z-30 w-[250px] mr-4 rounded border-[.5px] bg-white border-body-color/50 py-4 duration-300 dark:border-body-color/20 dark:bg-dark lg:visible lg:static lg:w-auto lg:border-none lg:!bg-transparent lg:p-0 lg:opacity-100
+                className={`absolute right-0 z-30 w-[250px] rounded border-[.5px] bg-white border-body-color/50 py-4 duration-300 dark:border-body-color/20 dark:bg-dark lg:visible lg:static lg:w-auto lg:border-none lg:!bg-transparent lg:p-0 lg:opacity-100
 
                 ${
                   navbarOpen
@@ -99,7 +98,7 @@ export const Header = () => {
                 }
                 `}
               >
-                <ul className="block lg:flex lg:space-x-12 lg:-ml-10 m-0 p-4">
+                <ul className="block lg:flex lg:space-x-12  m-0 p-4">
                   {menuItems.map((item) => (
                     <li key={item.id} className="group relative">
                       <Link href={item.path}>
@@ -113,20 +112,17 @@ export const Header = () => {
                 </ul>
               </nav>
             </div>
-            <div className="flex gap-2 lg:gap-4 items-center justify-end mr-16 lg:pr-0">
-              <Button text="Create" onClick={() => {}}></Button> 
-              <Button text="Log In" onClick={() => signIn()}></Button>
-
-              {/* {session !== null ? ( 
+            <div className="flex lg:w-auto w-full gap-2 lg:gap-4 items-center justify-end lg:mr-0 mr-16 lg:pr-0">
+              {session !== null ? ( 
                 <Button onClick={() => router.push("/create")} text="Create" />
               ) : null}
               <Button
                 onClick={
-                  session !== null ? () => signOut() : () => signIn("github")
+                  session !== null ? () => signOut() : () => signIn()
                 }
-                text={session !== null ? "Logout" : "Login"}
+                text={session !== null ? "Log Out" : "Login"}
               />
-              */}
+
               <div className="flex gap-3 items-center">
                 <ThemeToggler />
               </div>

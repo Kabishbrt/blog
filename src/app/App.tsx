@@ -6,6 +6,8 @@ import { useState } from "react";
 import { useTheme } from "next-themes";
 import { Spinner } from "./components/spinner";
 import { Header } from "./components/header";
+import { useSession } from "next-auth/react";
+
 
 interface AppProps {
   children: React.ReactNode; // Accept children prop of type React.ReactNode
