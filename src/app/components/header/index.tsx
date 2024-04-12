@@ -45,12 +45,15 @@ export const Header = () => {
     <div>
       <header
         className={`top-0 left-0 z-40 flex w-full items-center bg-transparent
-        ${
-          Sticky
-            ? "!fixed !z-[9999] !bg-white !bg-opacity-80 shadow-sticky backdrop:blur-md !transition dark:!bg-primary dark:!bg-opacity-20"
-            : "absolute"
-        }
+          ${
+            Sticky
+              ? "!fixed !z-[9999] !bg-white !bg-opacity-80 shadow-sticky !transition dark:!bg-primary dark:!bg-opacity-20"
+              : "absolute"
+          }
         `}
+        style={{
+          backdropFilter: Sticky ? "blur(2px)" : "none", // Adjust the blur value as needed
+        }}
       >
         <div className="container">
           <div className="relative flex items-center justify-between">
