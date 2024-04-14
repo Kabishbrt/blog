@@ -14,6 +14,8 @@ interface AppProps {
 }
 
 export const App = ({ children }: AppProps) => {
+
+
   const { resolvedTheme, theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
