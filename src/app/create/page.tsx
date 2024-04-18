@@ -20,7 +20,7 @@ import { BlogFormData } from '../../utils/types';
 
 
 const app = initializeApp(firebaseConfig);
-const stroage = getStorage(app, "gs://blog-app-97d34.appspot.com");
+const stroage = getStorage(app, "gs://blog-app-f7f79.appspot.com");
 
 function createUniqueFileName(fileName: string) {
   const timeStamp = Date.now();
@@ -103,9 +103,12 @@ export default function Create() {
 
   console.log(formData, "formData");
 
+  
+
   return (
     <section className="overflow-hidden py-16 md:py-20 lg:py-28">
       <div className="container">
+        
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4">
             <div className="mb-12 rounded-md bg-primary/[3%] py-10 dark:bg-dark sm:p-[55px] lg:mb-5 lg:px-8 xl:p-[55px] px-8">
@@ -128,11 +131,7 @@ export default function Create() {
                         className="w-full mb-8 rounded-md border border-transparent py-3 px-6 text-base text-body-color placeholder-body-color shadow-one outline-none focus:border-primary focus-visible:shadow-none dark:bg-[#242B51] dark:shadow-signUp"
                       />
                     </div>
-                    {imageLoading ? (
-                      <div className="w-1/2">
-                        <Spinner />
-                      </div>
-                    ) : null}
+
                   </div>
 
                   <div className="-mx-4 flex flex-wrap">
