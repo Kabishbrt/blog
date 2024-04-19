@@ -9,7 +9,6 @@ export const Loader = () => {
     <div className="fixed w-full h-full flex justify-center items-center bg-black bg-opacity-50 z-50">
       <RotatingLines
         visible={true}
-        height={96}
         width={"96"}
         strokeColor={strokecolor}
         animationDuration={"0.75"}
