@@ -12,7 +12,7 @@ export const Loader = () => {
         height={96}
         width={"96"}
         strokeColor={strokecolor}
-        animationDuration={0.75}
+        animationDuration={"0.75"}
         ariaLabel="rotating-lines-loading"
       />
     </div>
